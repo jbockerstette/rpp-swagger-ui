@@ -38,7 +38,8 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "http://petstore.swagger.io/v2/swagger.json";
+        //You must chnage this ip address to the localhost ip address for this to work.
+        url = "http://162.243.36.108:16006/1/swagger.json";
       }
 
       hljs.configure({
@@ -50,7 +51,8 @@
         window.SwaggerTranslator.translate();
       }
       window.swaggerUi = new SwaggerUi({
-        url: url,
+        //You must chnage this ip address to the localhost ip address for this to work.
+        url: "http://162.243.36.108:16006/1/swagger.json",
         dom_id: "swagger-ui-container",
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){
