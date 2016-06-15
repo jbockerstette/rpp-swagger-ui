@@ -7,6 +7,9 @@ After=network-online.target
 [Service]
 Type=oneshot
 ExecStart=/root/swagger-ui/dist/fix-ip-in-index.sh
+StandardOutput=syslog
+StandardError=syslog
+
 
 [Install]
 WantedBy=multi-user.target
