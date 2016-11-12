@@ -1438,6 +1438,7 @@
   width: 200px;
 }
 .swagger-section #explore,
+.swagger-section #btnLogin,
 .swagger-section #auth_container .authorize__btn {
   display: block;
   text-decoration: none;
@@ -1454,6 +1455,7 @@
   border-radius: 4px;
 }
 .swagger-section #explore:hover,
+.swagger-section #btnLogin:hover,
 .swagger-section #auth_container .authorize__btn:hover {
   background-color: #547f00;
 }
