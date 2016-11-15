@@ -16,6 +16,7 @@
     "build": "npm run handlebars && gulp",
     "handlebars": "handlebars ./src/main/template -f ./src/main/template/templates.js && gulp handlebars",
     "serve": "gulp serve",
+    "start": "node /usr/bin/http-server ./dist --ssl --cors --key /etc/ssl/rpp_server.key --cert /etc/ssl/rpp_server.crt",
     "prejshint": "gulp",
     "jshint": "jshint .",
     "pretest": "npm run jshint",
