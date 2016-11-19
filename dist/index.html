@@ -32,6 +32,7 @@
     <!-- <script src='lang/ru.js' type='text/javascript'></script> -->
     <!-- <script src='lang/en.js' type='text/javascript'></script> -->
 
+
     <script type="text/javascript">
         $(function () {
             var url = window.location.search.match(/url=([^&]+)/);
@@ -39,7 +40,7 @@
                 url = decodeURIComponent(url[1]);
             } else {
                 //You must chnage this ip address to the localhost ip address for this to work.
-                url = "http://127.0.0.1:16006/1/swagger.json";
+                url = "https://localhost:16006/1/swagger.json";
             }
 
             hljs.configure({
@@ -52,7 +53,7 @@
             }
             window.swaggerUi = new SwaggerUi({
                 //You must chnage this ip address to the localhost ip address for this to work.
-                url: "http://127.0.0.1:16006/1/swagger.json",
+                url: "https://localhost:16006/1/swagger.json",
                 dom_id: "swagger-ui-container",
                 supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
                 onComplete: function (swaggerApi, swaggerUi) {
@@ -117,10 +118,12 @@
 
             // User click the login button
             $("form").submit(function (event) {
+                event.stopPropagation();
                 un = $("#username").val();
                 pw = $("#password").val();
                 //Close modal login
                 modalLoginDialog.style.display = "none";
+                return false;
             });
 
             // When the user clicks anywhere outside of the modal, close it
@@ -136,15 +139,19 @@
     </script>
 </head>
 
-<body class="swagger-section">
-<div id='header'>
-    <div class="swagger-ui-wrap">
-        <a id="logo"><img class="logo__img" alt="swagger" height="30" width="30"
-                                                   src="images/apple.png"/><span class="logo__title">Apple RPP</span></a>
-        <form id='api_selector'>
-            <div class='input'><a id="btnLogin" class="header__btn" href="#" data-sw-translate>Login</a></div>
-        </form>
+<body>
+<div class="swagger-section">
+    <div id='header'>
+        <div class="swagger-ui-wrap">
+            <a id="logo"><img class="logo__img" alt="swagger" height="30" width="30"
+                              src="images/apple.png"/><span class="logo__title">Apple RPP</span></a>
+            <form id='api_selector'>
+                <div class='input'><a id="btnLogin" class="header__btn" data-sw-translate>Login</a></div>
+            </form>
+        </div>
     </div>
+    <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
+    <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </div>
 <div class="modal" id="modalLoginDialog" tabindex="-1" role="dialog" aria-labelledby="modalLoginDialogLabel"
      aria-hidden="true"
@@ -154,11 +161,9 @@
         <form role="form">
             <input type="text" #username class="form-control" id="username" placeholder="Username" required>
             <input type="password" #password class="form-control" id="password" placeholder="Password" required>
-            <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+            <input type="submit" name="login" class="login loginmodal-submit" id="submit_login" value="Login">
         </form>
     </div>
 </div>
-<div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
-<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </body>
 </html>
