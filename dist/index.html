@@ -40,7 +40,7 @@
                 url = decodeURIComponent(url[1]);
             } else {
                 //You must chnage this ip address to the localhost ip address for this to work.
-                url = "https://localhost:16006/1/swagger.json";
+                url = "https://111.111.111.111:16006/1/swagger.json";
             }
 
             hljs.configure({
@@ -53,7 +53,7 @@
             }
             window.swaggerUi = new SwaggerUi({
                 //You must chnage this ip address to the localhost ip address for this to work.
-                url: "https://localhost:16006/1/swagger.json",
+                url: "https://111.111.111.111:16006/1/swagger.json",
                 dom_id: "swagger-ui-container",
                 supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
                 onComplete: function (swaggerApi, swaggerUi) {
