@@ -39,8 +39,9 @@
             if (url && url.length > 1) {
                 url = decodeURIComponent(url[1]);
             } else {
-                //You must chnage this ip address to the localhost ip address for this to work.
-                url = "https://111.111.111.111:16006/1/swagger.json";
+                //The setup.sh script will replace THIS_HOSTNAME_WILL_BE_REPLACED_IN_SETUP with the actual hostname
+                // of this box.
+                url = "https://THIS_HOSTNAME_WILL_BE_REPLACED_IN_SETUP:16006/1/swagger.json";
             }
 
             hljs.configure({
@@ -52,8 +53,9 @@
                 window.SwaggerTranslator.translate();
             }
             window.swaggerUi = new SwaggerUi({
-                //You must chnage this ip address to the localhost ip address for this to work.
-                url: "https://111.111.111.111:16006/1/swagger.json",
+                //The setup.sh script will replace THIS_HOSTNAME_WILL_BE_REPLACED_IN_SETUP with the actual hostname
+                // of this box.
+                url: "https://THIS_HOSTNAME_WILL_BE_REPLACED_IN_SETUP:16006/1/swagger.json",
                 dom_id: "swagger-ui-container",
                 supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
                 onComplete: function (swaggerApi, swaggerUi) {
