@@ -1,13 +1,13 @@
 {
   "license": "Apache-2.0", 
+  "readmeFilename": "README.md", 
   "description": "Swagger UI is a dependency-free collection of HTML, JavaScript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API", 
   "repository": {
     "url": "https://github.com/jbockerstette/rpp-swagger-ui.git", 
     "type": "git"
   }, 
   "author": "Jim Bockerstette <jim.bockerstette@gmail.com>", 
-  "homepage": "http://swagger.io", 
-  "version": "5.0.3-megawin-sim", 
+  "version": "5.0.4-megawin-sim", 
   "scripts": {
     "prejshint": "gulp", 
     "handlebars": "handlebars ./src/main/template -f ./src/main/template/templates.js && gulp handlebars", 
@@ -21,10 +21,10 @@
   "devDependencies": {
     "gulp-declare": "^0.3.0", 
     "handlebars": "^4.0.5", 
-    "selenium-webdriver": "^2.45.0", 
-    "gulp-wrap": "^0.11.0", 
-    "gulp-less": "^3.0.1", 
     "jshint-stylish": "^1.0.1", 
+    "gulp-wrap": "^0.11.0", 
+    "chai": "^2.1.0", 
+    "selenium-webdriver": "^2.45.0", 
     "http-server": "^0.8.0", 
     "gulp-rename": "^1.2.0", 
     "swagger-client": "2.1.23", 
@@ -38,7 +38,7 @@
     "karma-chai": "0.1.0", 
     "docco": "^0.7.0", 
     "karma-sinon-chai": "1.1.0", 
-    "chai": "^2.1.0", 
+    "gulp-less": "^3.0.1", 
     "express": "^4.12.0", 
     "gulp-header": "^1.2.2", 
     "gulp-clean": "^0.3.1", 
@@ -55,6 +55,6 @@
     "karma": "0.13.19"
   }, 
   "main": "dist/swagger-ui.js", 
-  "readmeFilename": "README.md", 
+  "homepage": "http://swagger.io", 
   "name": "rpp-swagger-ui"
 }
